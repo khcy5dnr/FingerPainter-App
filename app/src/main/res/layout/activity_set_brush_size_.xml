@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#c5f5f0"
     tools:context="com.example.durai23.fingerpainterapp.SetBrushSize_Activity">
 
     <SeekBar
         android:id="@+id/seekBar_width"
-
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:max="150"
-        android:progress="20"
+        android:max="200"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="158dp"
         android:layout_marginTop="41dp"
@@ -23,7 +22,6 @@
         android:id="@+id/brush_width"
         android:layout_width="140dp"
         android:layout_height="43dp"
-        android:text="20"
         android:textAlignment="center"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -69,32 +67,40 @@
         android:textSize="25sp"
         android:textStyle="italic" />
 
-    <RadioButton
-        android:id="@+id/radioButton_Round"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="ROUND"
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:id="@+id/radioGroup"
+        android:layout_marginTop="24dp"
+        android:weightSum="1"
+        android:layout_marginStart="34dp"
         android:layout_below="@+id/textView2"
-        android:layout_toStartOf="@+id/textView2" />
+        android:layout_alignStart="@+id/textView3">
 
-    <RadioButton
-        android:id="@+id/radioButton_Square"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SQUARE"
-        android:layout_alignBaseline="@+id/radioButton_Round"
-        android:layout_alignBottom="@+id/radioButton_Round"
-        android:layout_alignStart="@+id/okButton" />
 
-    <RadioButton
-        android:id="@+id/radioButton_Butt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BUTT"
-        android:layout_alignBaseline="@+id/radioButton_Square"
-        android:layout_alignBottom="@+id/radioButton_Square"
-        android:layout_toEndOf="@+id/textView2" />
+        <RadioButton
+            android:id="@+id/radioButton_round"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:text="ROUND"
+            android:checked="true"
+            android:layout_weight="0.31" />
+
+        <RadioButton
+            android:id="@+id/radioButton_square"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:text="SQUARE"
+            android:layout_weight="0.15" />
+
+        <RadioButton
+            android:id="@+id/radioButton_butt"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:text="BUTT"
+            android:layout_weight="0.15" />
+    </RadioGroup>
 
 
 </RelativeLayout>

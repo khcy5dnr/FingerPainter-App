@@ -2,6 +2,7 @@ package com.example.durai23.fingerpainterapp;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,6 +43,22 @@ public class MainActivity extends AppCompatActivity {
             case SET_BRUSH_WIDTH_ACTIVITY_REQUEST_CODE:
                 fingerPainterView.setBrushWidth(bundle.getInt("brushWidth"));
                 Log.d("Colour selection","Main Activity ok" + bundle.getInt("brushWidth"));
+
+                String shape = bundle.getString("brushShape");
+
+                if(shape.compareTo("ROUND") == 0){
+                    fingerPainterView.setBrush(Paint.Cap.ROUND);
+                    Toast.makeText(this,"ROUND SHAPE SELECTED",Toast.LENGTH_SHORT).show();
+                }
+                else if(shape.compareTo("SQUARE") == 0){
+                    fingerPainterView.setBrush(Paint.Cap.SQUARE);
+                    Toast.makeText(this,"SQUARE SHAPE SELECTED",Toast.LENGTH_SHORT).show();
+                }
+                else if(shape.compareTo("BUTT") == 0){
+                    fingerPainterView.setBrush(Paint.Cap.BUTT);
+                    Toast.makeText(this,"BUTT SHAPE SELECTED",Toast.LENGTH_SHORT).show();
+                }
+
                 break;
             default:
                 Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show();
@@ -70,7 +87,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setBrushWidth(View v){
+        Bundle mBundle = new Bundle();
+        mBundle.putInt("brushWidth",fingerPainterView.getBrushWidth());
         Intent intent = new Intent(MainActivity.this, SetBrushSize_Activity.class);
+        intent.putExtras(mBundle);
         startActivityForResult(intent,SET_BRUSH_WIDTH_ACTIVITY_REQUEST_CODE);
     }
 

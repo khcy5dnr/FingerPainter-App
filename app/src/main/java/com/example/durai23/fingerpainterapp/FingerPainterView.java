@@ -62,7 +62,7 @@ public class FingerPainterView extends View {
 
         // default brush style and colour
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeJoin(Paint.Join.BEVEL);
         paint.setStrokeWidth(20);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setARGB(255,0,0,0);
@@ -80,9 +80,7 @@ public class FingerPainterView extends View {
         paint.setStrokeWidth(width);
     }
 
-    public int getBrushWidth() {
-        return (int) paint.getStrokeWidth();
-    }
+    public int getBrushWidth() { return (int) paint.getStrokeWidth(); }
 
     public void setColour(int colour) {
         paint.setColor(colour);

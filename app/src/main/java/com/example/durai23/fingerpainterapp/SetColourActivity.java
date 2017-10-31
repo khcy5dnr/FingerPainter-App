@@ -2,6 +2,7 @@ package com.example.durai23.fingerpainterapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,15 @@ public class SetColourActivity extends AppCompatActivity {
         magentaColour = (Button)findViewById(R.id.magentaButton);
         grayColour = (Button)findViewById(R.id.grayButton);
         whiteColour = (Button)findViewById(R.id.whiteButton);
+
+        redColour.setBackgroundColor(Color.RED);
+        yellowColour.setBackgroundColor(Color.YELLOW);
+        blueColour.setBackgroundColor(Color.BLUE);
+        blackColour.setBackgroundColor(Color.BLACK);
+        greenColour.setBackgroundColor(Color.GREEN);
+        magentaColour.setBackgroundColor(Color.MAGENTA);
+        grayColour.setBackgroundColor(Color.GRAY);
+        whiteColour.setBackgroundColor(Color.WHITE);
 
         redColour.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

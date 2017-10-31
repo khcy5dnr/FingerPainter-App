@@ -194,4 +194,12 @@ public class FingerPainterView extends View {
         }
         return true;
     }
+
+    public void clearCanvas(){
+
+        //clear the canvas
+        bitmap.eraseColor(Color.TRANSPARENT);
+        path.reset();
+        invalidate();
+    }
 }

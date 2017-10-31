@@ -15,20 +15,23 @@
         android:progress="20"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="158dp"
-        android:layout_above="@+id/brush_width"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="70dp" />
+        android:layout_marginTop="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/brush_width"
         android:layout_width="140dp"
         android:layout_height="43dp"
-        android:text="WIDTH"
+        android:text="20"
         android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteY="234dp"
         tools:layout_editor_absoluteX="122dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/okButton"
@@ -37,8 +40,61 @@
         android:text="OK"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="447dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/brush_width"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp" />
+        android:layout_marginTop="64dp"
+        android:text="BRUSH STYLE"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/seekBar_width"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="60dp"
+        android:text="SET BRUSH WIDTH"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="italic" />
+
+    <RadioButton
+        android:id="@+id/radioButton_Round"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="ROUND"
+        android:layout_below="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2" />
+
+    <RadioButton
+        android:id="@+id/radioButton_Square"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SQUARE"
+        android:layout_alignBaseline="@+id/radioButton_Round"
+        android:layout_alignBottom="@+id/radioButton_Round"
+        android:layout_alignStart="@+id/okButton" />
+
+    <RadioButton
+        android:id="@+id/radioButton_Butt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUTT"
+        android:layout_alignBaseline="@+id/radioButton_Square"
+        android:layout_alignBottom="@+id/radioButton_Square"
+        android:layout_toEndOf="@+id/textView2" />
+
+
 </RelativeLayout>

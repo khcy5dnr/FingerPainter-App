@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00fff2"
     tools:context="com.example.durai23.fingerpainterapp.SetColourActivity">
 
 
@@ -11,8 +12,7 @@
         android:id="@+id/redButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Red"
-        android:onClick="return_colourChoice"
+        android:text=""
         tools:layout_editor_absoluteX="67dp"
         tools:layout_editor_absoluteY="116dp"
         android:layout_marginStart="84dp"
@@ -27,13 +27,13 @@
         android:layout_alignTop="@+id/redButton"
         android:layout_marginStart="45dp"
         android:layout_toEndOf="@+id/redButton"
-        android:text="Yellow" />
+        android:text="" />
 
     <Button
         android:id="@+id/blueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Blue"
+        android:text=""
         android:layout_marginTop="50dp"
         android:layout_below="@+id/redButton"
         android:layout_alignStart="@+id/redButton" />
@@ -42,7 +42,6 @@
         android:id="@+id/blackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Black"
         android:layout_alignBaseline="@+id/blueButton"
         android:layout_alignBottom="@+id/blueButton"
         android:layout_alignStart="@+id/yellowButton" />
@@ -51,7 +50,6 @@
         android:id="@+id/greenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Green"
         android:layout_below="@+id/blueButton"
         android:layout_alignStart="@+id/blueButton"
         android:layout_marginTop="49dp" />
@@ -62,14 +60,13 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/blackButton"
         android:layout_alignTop="@+id/greenButton"
-        android:text="Magenta" />
+        />
 
     <Button
         android:id="@+id/grayButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Gray"
         android:layout_below="@+id/greenButton"
         android:layout_alignStart="@+id/greenButton" />
 
@@ -79,5 +76,5 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/grayButton"
         android:layout_alignEnd="@+id/blackButton"
-        android:text="White" />
+        />
 </RelativeLayout>

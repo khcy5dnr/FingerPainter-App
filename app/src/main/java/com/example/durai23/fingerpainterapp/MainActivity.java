@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.Serializable;
@@ -15,23 +16,37 @@ public class MainActivity extends AppCompatActivity {
     static final int SET_BRUSH_WIDTH_ACTIVITY_REQUEST_CODE = 2;
     private FingerPainterView fingerPainterView;
 
+    Button clear;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         fingerPainterView = (FingerPainterView) findViewById(R.id.canvasView);
+        clear = (Button) findViewById(R.id.clearCanvas);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == SETCOLOUR_ACTIVITY_REQUEST_CODE){
-            Bundle bundle = data.getExtras();
-            int choice = bundle.getInt("colourChoice");//get colour code
-            Log.d("Colour selection","Main Activity ok" + choice);
-            changeColour(choice);
+
+        Bundle bundle = data.getExtras();
+
+        switch(requestCode){
+            case SETCOLOUR_ACTIVITY_REQUEST_CODE:
+                int choice = bundle.getInt("colourChoice");//get colour code
+                Log.d("Colour selection","Main Activity ok" + choice);
+                changeColour(choice);
+                break;
+            case SET_BRUSH_WIDTH_ACTIVITY_REQUEST_CODE:
+                fingerPainterView.setBrushWidth(bundle.getInt("brushWidth"));
+                Log.d("Colour selection","Main Activity ok" + bundle.getInt("brushWidth"));
+                break;
+            default:
+                Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show();
         }
+
     }
 
     public void setColour(View v){
@@ -57,5 +72,9 @@ public class MainActivity extends AppCompatActivity {
     public void setBrushWidth(View v){
         Intent intent = new Intent(MainActivity.this, SetBrushSize_Activity.class);
         startActivityForResult(intent,SET_BRUSH_WIDTH_ACTIVITY_REQUEST_CODE);
+    }
+
+    public void clearCanvas(View v){
+        fingerPainterView.clearCanvas();
     }
 }

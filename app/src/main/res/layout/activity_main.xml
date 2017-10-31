@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00fff2"
     tools:context="com.example.durai23.fingerpainterapp.MainActivity">
 
     <com.example.durai23.fingerpainterapp.FingerPainterView
@@ -11,12 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="440dp"
         tools:layout_editor_absoluteY="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_above="@+id/set_colour" />
+        android:layout_above="@+id/set_colour"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/set_colour"
@@ -36,5 +36,14 @@
         android:layout_alignBaseline="@+id/set_colour"
         android:layout_alignBottom="@+id/set_colour"
         android:layout_toEndOf="@+id/set_colour" />
+
+    <Button
+        android:id="@+id/clearCanvas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:onClick="clearCanvas"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/brush_settings" />
 
 </RelativeLayout>

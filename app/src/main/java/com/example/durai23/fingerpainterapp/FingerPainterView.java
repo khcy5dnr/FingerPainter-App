@@ -194,10 +194,36 @@ public class FingerPainterView extends View {
     }
 
     public void clearCanvas(){
-
         //clear the canvas
-        bitmap.eraseColor(Color.TRANSPARENT);
+        bitmap.eraseColor(Color.WHITE);
         path.reset();
         invalidate();
+        setImageAsCanvas();
     }
+
+    public void setImageAsCanvas(){
+        if(uri!=null) {
+            try {
+                // attempt to load the uri provided, scale to fit our canvas
+                InputStream stream = context.getContentResolver().openInputStream(uri);
+                Bitmap bm = BitmapFactory.decodeStream(stream);
+                bitmap = Bitmap.createScaledBitmap(bm, Math.max(canvas.getWidth(), canvas.getHeight()), Math.max(canvas.getWidth(), canvas.getHeight()), false);
+                stream.close();
+                bm.recycle();
+            } catch (IOException e) {
+                Log.e("FingerPainterView", e.toString());
+            }
+        }
+        canvas = new Canvas(bitmap);
+    }
+
+    public void deleteImageFromCanvas(){
+        if(uri != null) {
+            bitmap.eraseColor(Color.WHITE);
+            path.reset();
+            invalidate();
+            uri = null;
+        }
+    }
+
 }

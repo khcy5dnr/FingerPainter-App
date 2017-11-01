@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00fff2"
+    android:background="#98b4f0"
     tools:context="com.example.durai23.fingerpainterapp.MainActivity">
 
     <com.example.durai23.fingerpainterapp.FingerPainterView
@@ -14,36 +14,32 @@
         tools:layout_editor_absoluteY="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_alignParentTop="true"
-        android:layout_above="@+id/set_colour"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/set_colour" />
 
     <Button
         android:id="@+id/set_colour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SET COLOUR"
+        android:text="COLOURS"
         android:onClick="setColour"
+        android:background="@drawable/rounded_edge_button"
+        android:textColor="#fdfdfd"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_toStartOf="@+id/brush_settings"
+        android:layout_marginEnd="69dp" />
 
     <Button
         android:id="@+id/brush_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Brush settings"
+        android:text="Brush"
         android:onClick="setBrushWidth"
-        android:layout_alignBaseline="@+id/set_colour"
-        android:layout_alignBottom="@+id/set_colour"
-        android:layout_toEndOf="@+id/set_colour" />
-
-    <Button
-        android:id="@+id/clearCanvas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Clear"
-        android:onClick="clearCanvas"
+        android:background="@drawable/rounded_edge_button"
+        android:textColor="#fdfdfd"
+        android:layout_marginEnd="69dp"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/brush_settings" />
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

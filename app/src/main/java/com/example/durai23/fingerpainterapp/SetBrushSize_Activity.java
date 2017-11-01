@@ -76,6 +76,6 @@ public class SetBrushSize_Activity extends AppCompatActivity {
         Intent result = new Intent();
         result.putExtras(bundle);
         setResult(SET_BRUSH_WIDTH_ACTIVITY_REQUEST_CODE, result);
-        finish();
+        finish();// destroy activity once the brush size or shape is selected.
     }
 }

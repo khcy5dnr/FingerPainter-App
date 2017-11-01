@@ -72,11 +72,11 @@
         android:layout_height="100dp"
         android:orientation="horizontal"
         android:id="@+id/radioGroup"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:weightSum="1"
-        android:layout_marginStart="34dp"
         android:layout_below="@+id/textView2"
-        android:layout_alignStart="@+id/textView3">
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginStart="75dp">
 
 
         <RadioButton
@@ -92,13 +92,6 @@
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:text="SQUARE"
-            android:layout_weight="0.15" />
-
-        <RadioButton
-            android:id="@+id/radioButton_butt"
-            android:layout_width="wrap_content"
-            android:layout_height="43dp"
-            android:text="BUTT"
             android:layout_weight="0.15" />
     </RadioGroup>
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00fff2"
+    android:background="#98b4f0"
     tools:context="com.example.durai23.fingerpainterapp.SetColourActivity">
 
 
@@ -15,8 +15,8 @@
         android:text=""
         tools:layout_editor_absoluteX="67dp"
         tools:layout_editor_absoluteY="116dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="69dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="70dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 

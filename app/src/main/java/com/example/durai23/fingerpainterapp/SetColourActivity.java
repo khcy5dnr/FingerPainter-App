@@ -110,7 +110,7 @@ public class SetColourActivity extends AppCompatActivity {
         Intent result = new Intent();
         result.putExtras(bundle);
         setResult(SETCOLOUR_ACTIVITY_REQUEST_CODE, result);
-        finish();
+        finish();// destroy the activity after the colour is chosen.
     }
 
 }

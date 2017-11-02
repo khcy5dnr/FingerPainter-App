@@ -39,6 +39,7 @@ public class SetColourActivity extends AppCompatActivity {
         grayColour = (Button)findViewById(R.id.grayButton);
         whiteColour = (Button)findViewById(R.id.whiteButton);
 
+        //set background colour of buttons
         redColour.setBackgroundColor(Color.RED);
         yellowColour.setBackgroundColor(Color.YELLOW);
         blueColour.setBackgroundColor(Color.BLUE);

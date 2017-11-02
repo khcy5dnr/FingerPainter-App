@@ -26,14 +26,8 @@ public class MainActivity extends AppCompatActivity {
     static final int SETCOLOUR_ACTIVITY_REQUEST_CODE = 1;
     static final int SET_BRUSH_WIDTH_ACTIVITY_REQUEST_CODE = 2;
     static final int LOAD_IMAGE_ACTIVITY = 3;
-    static final int VIEW_INTENT = 4;
 
     private FingerPainterView fingerPainterView;
-
-    Button clear;
-    Button loadImage;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},LOAD_IMAGE_ACTIVITY);
         }
 
+        // reference from https://developer.android.com/training/sharing/receive.html and modified according to need
         Intent intent = getIntent();
         String action = intent.getAction();
         String type = intent.getType();
@@ -71,10 +66,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //reference from https://developer.android.com/guide/topics/ui/menus.html and modified according to need
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu, menu);//Menu Resource, Menu
+        getMenuInflater().inflate(R.menu.menu, menu);//menu resources
         return true;
     }
 
@@ -110,25 +105,25 @@ public class MainActivity extends AppCompatActivity {
                 changeColour(choice);
                 break;
             case SET_BRUSH_WIDTH_ACTIVITY_REQUEST_CODE:
-                fingerPainterView.setBrushWidth(bundle.getInt("brushWidth"));
+                fingerPainterView.setBrushWidth(bundle.getInt("brushWidth"));//set brush width
                 Log.d("Colour selection","Main Activity ok" + bundle.getInt("brushWidth"));
 
-                String shape = bundle.getString("brushShape");
+                String shape = bundle.getString("brushShape");// get brush shape
 
                 if(shape.compareTo("ROUND") == 0){
-                    fingerPainterView.setBrush(Paint.Cap.ROUND);
+                    fingerPainterView.setBrush(Paint.Cap.ROUND);//set brush shape to round
                     Toast.makeText(this,"ROUND SHAPE SELECTED",Toast.LENGTH_SHORT).show();
                 }
                 else if(shape.compareTo("SQUARE") == 0){
-                    fingerPainterView.setBrush(Paint.Cap.SQUARE);
+                    fingerPainterView.setBrush(Paint.Cap.SQUARE);//set brush shape to square
                     Toast.makeText(this,"SQUARE SHAPE SELECTED",Toast.LENGTH_SHORT).show();
                 }
 
                 break;
-            case LOAD_IMAGE_ACTIVITY:
+            case LOAD_IMAGE_ACTIVITY:// loading a new image using the app
                 if(resultCode == RESULT_OK){
-                    fingerPainterView.load(data.getData());
-                    fingerPainterView.setImageAsCanvas();
+                    fingerPainterView.load(data.getData());//set URI
+                    fingerPainterView.setImageAsCanvas();//set image as canvas
                 }
                 break;
             default:
@@ -137,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //set paint colour based on user preference
     public void setColour(View v){
         Intent intent = new Intent(MainActivity.this, SetColourActivity.class);
         startActivityForResult(intent,SETCOLOUR_ACTIVITY_REQUEST_CODE);
@@ -157,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //method is called when "Brush" method is clicked
     public void setBrushWidth(View v){
         Bundle mBundle = new Bundle();
         mBundle.putInt("brushWidth",fingerPainterView.getBrushWidth());
@@ -169,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
         fingerPainterView.clearCanvas();
     }
 
+    //in-app load image function
     public void load_UserImage(){
         Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(galleryIntent,LOAD_IMAGE_ACTIVITY);

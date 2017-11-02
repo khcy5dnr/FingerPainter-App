@@ -33,6 +33,8 @@ public class SetBrushSize_Activity extends AppCompatActivity {
         radio_ShapeGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
         brushWidth.setText(Integer.toString(mBundle.getInt("brushWidth")));
+
+        //slider to set width of brush
         seekBar_width.setMax(200);
         seekBar_width.setProgress(mBundle.getInt("brushWidth"));
         seekBar_width.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

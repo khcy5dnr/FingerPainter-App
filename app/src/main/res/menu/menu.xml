@@ -3,7 +3,7 @@
     <item  android:id="@+id/clear"
         android:title="CLEAR CANVAS"/>
     <item  android:id="@+id/uploadImage"
-        android:title="UPLOAD IMAGE"/>
+        android:title="LOAD NEW IMAGE"/>
     <item  android:id="@+id/deleteImage"
         android:title="REMOVE IMAGE"/>
 </menu>
